@@ -1,57 +1,57 @@
 # Yet Another Traffic Bouncer README
 
-What do you need?
-_________________
+### What do you need?
+_____________________
 
 *NIX
 openssl + openssl header files (>= 0.9.8)
 g++
 
-Compiling
-_________
+### Compiling
+_____________
 
 first do a 'make clean'
 then do 'make system'
 system can be: linux,bsd,solaris,cygwin
 you can also do 'make system-static' 'make system-debug' or 'make system-debug-static' to make static/debug versions
 
-Setup
-_____
+### Setup
+_________
 
 Now copy a cert file (ftpd-dsa.pem) to bin directory
 Also copy yatb.conf.dist to bin dir
 If you have a rsa cert, you will need a dh file
 (can be generated with 'openssl dhparam -out dh1024.pem -2 1024')
 
-Encrypting config file
-______________________
+### Encrypting config file
+__________________________
 
 You can encrypt your config file and the cert file if you want
 to do so use the included blowcrypt
 syntax is: blowcrypt -e file to encrypt file and blowcrypt -d file to decrypt
 (you should encrypt the files on another shell and only upload the encrypted files)
 
-File permissions
-________________
+### File permissions
+____________________
 
 You can start yatb as root (it will change uid in this case)
 if you do so, make sure that bin dir and conf/cert belongs to this user (default is daemon)
 
-Start
-_____
+### Start
+_________
 
 To start yatb type ./yatb conffile (when using encrypted conf)
 or ./yatb -u conffile (when using uncrypted conf)
 
-format of conf file
-___________________
+### Format of conf file
+_______________________
 
 all entrys are of the folloing form:
 key=value;
 the ';' is important, also do not use " or spaces or anything else
 
-quick start
-___________
+### Quick start
+_______________
 
 most values can use the default from conf
 you only have to change a few sections:
@@ -59,9 +59,10 @@ you only have to change a few sections:
 
 -------------------------------------------------------------------------------------------------------
 
-config file values
-__________________
+### Config file values
+______________________
 
+```
 [ Debug ]
 debug=0; // enable debug mode
 
@@ -237,8 +238,7 @@ use_port_range=1; // use the port range for relinking
 
 buffersize=4096; // packet size
 
-pending=50; // maximum of pending connections
-
+pending=50; // maximum of pending connection
 connect_timeout=7; // connect timeout in seconds
 
 ident_timeout=7; // ident timeout in seconds
@@ -258,3 +258,4 @@ disable_noop=0; // disable noop command
 speed_write=0; // if enabled a tuned read/write loop is used in datathread (it's faster but not 100% tested)
 
 allow_noentry_connect=0; // if enabled not only entry bnc may connect to traffic bnc
+```
