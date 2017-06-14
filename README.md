@@ -3,59 +3,59 @@
 ### What do you need?
 _____________________
 
-*NIX
-openssl + openssl header files (>= 0.9.8)
+*NIX  
+openssl + openssl header files (>= 0.9.8)  
 g++
 
 ### Compiling
 _____________
 
-first do a 'make clean'
-then do 'make system'
-system can be: linux,bsd,solaris,cygwin
-you can also do 'make system-static' 'make system-debug' or 'make system-debug-static' to make static/debug versions
+first do a 'make clean'  
+then do 'make system'  
+system can be: linux,bsd,solaris,cygwin  
+you can also do 'make system-static' 'make system-debug' or 'make system-debug-static' to make static/debug versions  
 
 ### Setup
 _________
 
-Now copy a cert file (ftpd-dsa.pem) to bin directory
-Also copy yatb.conf.dist to bin dir
-If you have a rsa cert, you will need a dh file
-(can be generated with 'openssl dhparam -out dh1024.pem -2 1024')
+Now copy a cert file (ftpd-dsa.pem) to bin directory  
+Also copy yatb.conf.dist to bin dir  
+If you have a rsa cert, you will need a dh file  
+(can be generated with 'openssl dhparam -out dh1024.pem -2 1024')  
 
 ### Encrypting config file
 __________________________
 
-You can encrypt your config file and the cert file if you want
-to do so use the included blowcrypt
-syntax is: blowcrypt -e file to encrypt file and blowcrypt -d file to decrypt
-(you should encrypt the files on another shell and only upload the encrypted files)
+You can encrypt your config file and the cert file if you want  
+to do so use the included blowcrypt  
+syntax is: blowcrypt -e file to encrypt file and blowcrypt -d file to decrypt  
+(you should encrypt the files on another shell and only upload the encrypted files)  
 
 ### File permissions
 ____________________
 
-You can start yatb as root (it will change uid in this case)
-if you do so, make sure that bin dir and conf/cert belongs to this user (default is daemon)
+You can start yatb as root (it will change uid in this case)  
+if you do so, make sure that bin dir and conf/cert belongs to this user (default is daemon)  
 
 ### Start
 _________
 
-To start yatb type ./yatb conffile (when using encrypted conf)
-or ./yatb -u conffile (when using uncrypted conf)
+To start yatb type ./yatb conffile (when using encrypted conf)  
+or ./yatb -u conffile (when using uncrypted conf)  
 
 ### Format of conf file
 _______________________
 
-all entrys are of the folloing form:
-key=value;
-the ';' is important, also do not use " or spaces or anything else
+all entrys are of the folloing form:  
+key=value;  
+the ';' is important, also do not use " or spaces or anything else  
 
 ### Quick start
 _______________
 
-most values can use the default from conf
-you only have to change a few sections:
-[ Connection ] and [ SSL ]
+most values can use the default from conf  
+you only have to change a few sections:  
+[ Connection ] and [ SSL ]  
 
 -------------------------------------------------------------------------------------------------------
 
