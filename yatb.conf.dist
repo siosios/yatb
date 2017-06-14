@@ -37,6 +37,7 @@ data_cipher=HIGH+EECDH:HIGH+EDH;
 use_ident=1;
 enforce_ident=0;
 no_idnt_cmd=0;
+ident_ip=;
 
 [ Relink ]
 trytorelink=0;

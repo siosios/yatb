@@ -25,8 +25,8 @@ CConfig::CConfig()
 
 	// section [LIMIT]
 	day_limit = 0;
-    week_limit = 0;
-    month_limit = 0;
+	week_limit = 0;
+	month_limit = 0;
 
 	// section [SSL]
 	cert_path = "ftpd-dsa.pem";
@@ -44,6 +44,7 @@ CConfig::CConfig()
 	use_ident = 1;
 	enforce_ident = 0;
 	no_idnt_cmd = 0;
+	ident_ip = "";
 
 	// section [RELINK]
 	trytorelink = 0;
@@ -82,7 +83,7 @@ CConfig::CConfig()
 	sslexcludecmd = "";
 	reloadcmd = "";
 	killcmd = "";
-    entrycmd = "";
+	entrycmd = "";
 	fxpipcmd = "";
 	fpwlcmd = "";
 
@@ -120,7 +121,7 @@ CConfig::CConfig()
 	pidfile = "yatb.pid";
 	retry_count = 5;
 	ssl_ascii_cache = 0;
-    disable_noop = 0;
+	disable_noop = 0;
 	speed_write = 0;
 	allow_noentry_connect = 0;
 	active_bind_range_start = 0;
@@ -282,6 +283,7 @@ int CConfig::readconf(string filename,string key,int crypted)
 		getentry(use_ident,"use_ident",ok,daten);
 		getentry(enforce_ident,"enforce_ident",ok,daten);
 		getentry(no_idnt_cmd,"no_idnt_cmd",ok,daten);
+		getentry(ident_ip,"ident_ip",ok,daten);
 
 		// section [RELINK]
 		getentry(trytorelink,"trytorelink",ok,daten);

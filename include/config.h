@@ -44,12 +44,12 @@ class CConfig
 
 	// section [LIMIT]
 	double day_limit;
-    double week_limit;
-    double month_limit;
+	double week_limit;
+	double month_limit;
 
 	// section [SSL]
 	string cert_path;
-    int translate_nosslfxp;
+	int translate_nosslfxp;
 	int ssl_forward;
 	int use_ssl_exclude;
 	string sslexclude_list;
@@ -63,6 +63,7 @@ class CConfig
 	int use_ident;
 	int enforce_ident;
 	int no_idnt_cmd;
+	string ident_ip;
 
 	// section [RELINK]
 	string relink_ip;

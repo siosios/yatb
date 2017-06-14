@@ -6,7 +6,6 @@ CPPFLAGS = -W -Wall -O2 -I/usr/local/ssl/include -Iinclude
 
 include/tls_dh.h :
 	openssl dhparam -noout -C 2048 >>include/tls_dh.h
-	
 all:
 	@echo "To compile yatb type"
 	@echo "  - 'make linux' (linux-debug,linux-static,linux-debug-static) to compile under linux"

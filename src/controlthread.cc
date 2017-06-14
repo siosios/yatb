@@ -366,8 +366,20 @@ void CControlThread::mainloop(void)
 	{	
 		if(!using_entry  || (using_entry && !entrylist.IsInList(clientip)))
 		{
+			string ident_ip;
+			if (config.ident_ip != "")
+			{
+				ident_ip = config.ident_ip;
+			}
+			else
+			{
+				if (config.listen_ip != "")
+				{
+					ident_ip = config.listen_ip;
+				}
+			}
 			debugmsg(username,"[controlthread] try to get ident reply");
-			if(Ident(clientip,clientport,config.listen_port,config.listen_ip,ident_user,config.ident_timeout))
+			if(Ident(clientip,clientport,config.listen_port,ident_ip,ident_user,config.ident_timeout))
 			{
 			}
 			else

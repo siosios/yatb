@@ -1,4 +1,4 @@
-Yet Another Traffic Bouncer README
+# Yet Another Traffic Bouncer README
 
 What do you need?
 _________________
@@ -83,7 +83,7 @@ site_port=123;  // port from site - can be a list - see above
 
 entry_list=;  // a entry(s) are use add ips here
 
-connect_ip=;  // use a sepcial ip to connect to site
+connect_ip=;  // use a special ip to connect to site
 
 listen_interface=eth0; // gets ip for passive mode connections from this interface
                        // can be something like ppp0 for dialup connections
@@ -123,6 +123,8 @@ use_ident=1; // make an ident request
 enforce_ident=0; // enforce ident reply
 
 no_idnt_cmd=0; // don't sent IDNT command to site
+
+ident_ip=; // bind to this ip to get ident reply (defaults to listen_ip)
 
 [ Relink ]
 trytorelink=0; // enable relink feature
