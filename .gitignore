@@ -12,6 +12,5 @@
 *.la
 *.a
 
-bin/
 include/tls_dh.h
 yatb.conf
